@@ -1,3 +1,27 @@
+Ini adalah project untuk keperluan interview
+
+## SETUP
+
+1. Clone [Frontend App](https://github.com/madedwi/interview-frontend-simplehr) 
+2. Copy file ```.env.example``` menjadi ```.env```
+3. Sesuaikan configurasi pada file ```.env``` sesuai dengan enviroment anda
+4. Jalankan ```bash composer install ``` untuk mengunduh file dependency
+5. Jalankan perintah 
+    ```bash 
+    php artisan migrate #untuk migrasi database
+
+    php artisan db:seed #untuk dummy data
+
+    php artisan serve --port=8080
+    ``` 
+6. Jalankan Frontend App.
+   
+<br>
+<br>
+<hr>
+<br>
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
