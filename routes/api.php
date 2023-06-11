@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\JabatanController;
 use App\Http\Controllers\Api\UnitController;
+use App\Http\Controllers\Api\UserAccessController;
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -25,3 +26,4 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 Route::resource('units', UnitController::class);
 Route::resource('jabatan', JabatanController::class);
 Route::resource('pegawai', UserController::class);
+Route::get('user-access', UserAccessController::class);
