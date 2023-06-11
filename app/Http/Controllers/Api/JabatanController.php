@@ -67,4 +67,15 @@ class JabatanController extends Controller
 
         return response()->noContent();
     }
+
+    public function summary() {
+
+        $query = Jabatan::query();
+
+        return response()->json([
+            'data' => [
+                'total' => $query->count('id'),
+            ]
+        ]);
+    }
 }

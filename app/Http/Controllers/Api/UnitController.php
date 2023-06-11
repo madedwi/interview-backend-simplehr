@@ -74,4 +74,15 @@ class UnitController extends Controller
 
         return response()->noContent();
     }
+
+    public function summary() {
+
+        $query = Unit::query();
+
+        return response()->json([
+            'data' => [
+                'total' => $query->count('id'),
+            ]
+        ]);
+    }
 }

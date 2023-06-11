@@ -6,6 +6,7 @@ namespace App\Models;
 
 use Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -53,5 +54,9 @@ class User extends Authenticatable
 
     public function jabatan(): BelongsToMany{
         return $this->belongsToMany(Jabatan::class, 'user_jabatan', 'user_id', 'jabatan_id');
+    }
+
+    public function unit(): BelongsTo{
+        return $this->belongsTo(Unit::class);
     }
 }

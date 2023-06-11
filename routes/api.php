@@ -27,3 +27,10 @@ Route::resource('units', UnitController::class);
 Route::resource('jabatan', JabatanController::class);
 Route::resource('pegawai', UserController::class);
 Route::get('user-access', UserAccessController::class);
+
+
+Route::get('/summary/user', [UserController::class, 'summary']);
+Route::get('/summary/user-login', [UserController::class, 'summaryLogin']);
+Route::get('/summary/user-top-login', [UserController::class, 'summaryTopLogin']);
+Route::get('/summary/unit', [UnitController::class, 'summary']);
+Route::get('/summary/jabatan', [JabatanController::class, 'summary']);
