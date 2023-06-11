@@ -6,15 +6,18 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUnitRequest;
 use App\Http\Requests\UpdateUnitRequest;
 use App\Models\Unit;
+use Illuminate\Http\Request;
 
 class UnitController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $paginator = Unit::paginate(5);
+        $pageSize = $request->query('page-size', 20);
+
+        $paginator = Unit::paginate($pageSize);
 
         return response()->json($paginator);
     }

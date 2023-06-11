@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rule;
 
 class UpdatejabatanRequest extends FormRequest
@@ -24,7 +25,7 @@ class UpdatejabatanRequest extends FormRequest
     {
         return [
             'data' => 'array',
-            'data.*.name' => [
+            'data.0.name' => [
                 'required',
                 Rule::unique('jabatans', 'name')->ignore($this->route()->parameter('jabatan'), 'id')
             ]
